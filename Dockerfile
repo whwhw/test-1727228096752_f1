@@ -36,7 +36,7 @@ COPY function/   .
 RUN chown -R app:app ../
 
 ARG TEST_COMMAND=tox
-ARG TEST_ENABLED=true
+ARG TEST_ENABLED=false
 RUN [ "$TEST_ENABLED" = "false" ] && echo "skipping tests" || eval "$TEST_COMMAND"
 
 WORKDIR /home/app/

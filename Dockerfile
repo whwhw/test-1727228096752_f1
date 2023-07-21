@@ -1,5 +1,5 @@
-FROM ghcr.io/openfaas/of-watchdog:0.9.6 as watchdog
-FROM python:3.7-slim-buster
+FROM 10.10.150.20:6880/serverless_images/of-watchdog:0.9.6 as watchdog
+FROM 10.10.150.20:6880/serverless_images/python:3.7-slim-buster
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog

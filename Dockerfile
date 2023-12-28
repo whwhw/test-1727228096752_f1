@@ -25,13 +25,6 @@ USER root
 RUN pip install -r requirements.txt
 USER app
 
-RUN mkdir -p sdk
-RUN touch ./sdk/__init__.py
-WORKDIR /home/app/sdk/
-COPY sdk/requirements.txt	.
-RUN pip install --user -r requirements.txt
-COPY sdk/ .
-
 WORKDIR /home/app/
 RUN mkdir -p function
 RUN touch ./function/__init__.py

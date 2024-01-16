@@ -1,5 +1,5 @@
-FROM 172.16.116.202:6880/serverless_images/of-watchdog:0.9.6 as watchdog
-FROM 172.16.116.202:6880/serverless_images/python:3.7-slim-buster
+FROM 192.168.186.26:31180/serverless_images/of-watchdog:0.9.6 as watchdog
+FROM 192.168.186.26:31180/serverless_images/python:3.7-slim-buster
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog

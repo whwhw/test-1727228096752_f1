@@ -22,7 +22,7 @@ WORKDIR /home/app/
 COPY index.py           .
 COPY requirements.txt   .
 USER root
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 USER app
 
 WORKDIR /home/app/
@@ -30,7 +30,7 @@ RUN mkdir -p function
 RUN touch ./function/__init__.py
 WORKDIR /home/app/function/
 COPY function/requirements.txt	.
-RUN pip install --user -r requirements.txt
+RUN pip install --user -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 USER root
 COPY function/   .
